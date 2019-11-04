@@ -1,0 +1,300 @@
+<form [formGroup]="memberShipForm" (ngSubmit)="onSubmit()">
+    <nb-card size="small">
+        <nb-card-header>Membership Forms</nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="type-label" for="Type of Reg.">Type of Reg.</label>
+                    <nb-select fullWidth size="small" formControlName="typeOfReg">
+                            <nb-option value="AETISAN">AETISAN</nb-option>  
+                            <nb-option value="STAFF">STAFF</nb-option>
+                    </nb-select>    
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Reg. No.</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="regNumber">
+                </div>    
+
+                <div class="col-md-4">
+                    <label>Membership status</label>
+                    <nb-select fullWidth size="small" formControlName="status">
+                        <nb-option value="true" >Active</nb-option>
+                        <nb-option value="false" >Deactive</nb-option>
+                    </nb-select>
+                </div>   
+            </div>  
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Membership No.</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="membershipNumber">
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Date of Membership</label>
+                    <input nbInput fullWidth fieldSize="small" placeholder="Membership Date" [nbDatepicker]="dateOfMembership" shape="rectangle" formControlName="dateOfMembership">
+                    <nb-datepicker #dateOfMembership></nb-datepicker>
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Staff No.</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="staffNumber">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Registration No.</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="registrationNumber">
+                </div>
+
+                <div class="col-md-8">
+                    <label>Comments</label>
+                    <textarea nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="comment"></textarea>
+                </div>
+            </div>
+        </nb-card-body>    
+    </nb-card>    
+    <nb-card size="large">
+        <nb-card-header>Personal Details</nb-card-header>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>First Name</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="firstName">  
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Middle Name</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="middleName">
+                </div>    
+
+                <div class="col-md-4">
+                    <label>Last Name</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="lastName">
+                </div>   
+            </div>  
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Member Name</label>
+                    <input type="text" nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="memberName">
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Gender</label>
+                    <nb-select fullWidth size="small" shape="rectangle" formControlName="gender">
+                        <nb-option value="Male">Male</nb-option>
+                        <nb-option value="Female">Female</nb-option>
+                    </nb-select>
+                </div>
+                
+                <div class="col-md-4">
+                    <label>Category</label>
+                    <nb-select fullWidth size="small" shape="rectangle" formControlName="category">
+                            <nb-option value="1">General</nb-option>
+                            <nb-option value="2">OBC</nb-option>
+                            <nb-option value="3">ST</nb-option>
+                            <nb-option value="4">SC</nb-option>
+                        </nb-select>                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Date of Birth</label>
+                    <input nbInput fullWidth fieldSize="small" placeholder="DOB" [nbDatepicker]="dob" shape="rectangle" formControlName="dob">
+                    <nb-datepicker #dob></nb-datepicker>
+                </div>
+
+                <div class="col-md-6">
+                        <label>Retirement Date</label>
+                        <input nbInput fullWidth fieldSize="small" placeholder="" [nbDatepicker]="rtDate" shape="rectangle" formControlName="rtDate">
+                        <nb-datepicker #rtDate ></nb-datepicker>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4">
+                        <label>Father Name</label>
+                        <input type="text"nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="fatherName">
+                </div>
+
+                <div class="col-md-4">
+                        <label>Phone No.</label>
+                        <input type="text"nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="phoneNumber">
+                </div>
+
+                <div class="col-md-4">
+                        <label>E-Mail</label>
+                        <input type="text"nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                        <label>Current Address</label>
+                        <textarea nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="currentAddress"></textarea>     
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <nb-checkbox status="success" formControlName="onlineAccess">Online Access</nb-checkbox>
+                </div>
+                <!-- <div class="col-md-4">
+                    <nb-checkbox status="success" formControlName="thriftAmt200">Thrift Amt 200</nb-checkbox>
+                </div>
+
+                <div class="col-md-4">
+                    <nb-checkbox status="success" formControlName="guarantorEmi">Guarantor EMI</nb-checkbox>
+                </div> -->
+
+            </div>
+        </nb-card-body>    
+    </nb-card>       
+    <nb-card size="medium">
+        <nb-card-header>Office Details</nb-card-header>
+        <nb-card-body formGroupName="address">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Office Address</label>
+                    <textarea nbInput fullWidth fieldSize="small" shape="rectangle" formControlName="officeAddress"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Gross salary</label>
+                    <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="grossSalary">
+                </div>
+    
+                <div class="col-md-4">
+                        <label>Division</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="division">
+                </div>
+    
+                <div class="col-md-4">
+                        <label>Grade</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="grade">
+                </div>
+    
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                        <label>Pin Code</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="pinCode">
+                </div>
+            
+                <div class="col-md-4">
+                        <label>PAN No.</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="panNo">
+                </div>
+            
+                <div class="col-md-4">
+                        <label>Bill No.</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="billNo">
+                </div> 
+            </div>
+    
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Designation</label>
+                    <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="designation">
+                </div>
+            </div>    
+        </nb-card-body>
+    </nb-card>    
+    <nb-card size="medium">
+        <nb-card-header>Bank Details</nb-card-header>
+        <nb-card-body formGroupName="bank">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Bank Name</label>
+                    <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="bankName">
+                </div>
+            
+                <div class="col-md-6">
+                    <label>Account No.</label>
+                    <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="accountNo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                        <label>Branch Name</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="branchName"> 
+                </div>
+    
+                <div class="col-md-6">
+                        <label>Branch Code</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="branchCode">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                        <label>IFSC/RTGS Code</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="ifscOrRtgsCode">
+                </div>
+            
+                <div class="col-md-6">
+                        <label>Swift Code</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="swiftCode">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                        <label>Address Of Bank</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="bankAddress">
+                </div> 
+
+                <div class="col-md-6">
+                        <label>City</label>
+                        <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="city">
+                </div> 
+            </div>
+        </nb-card-body>
+    </nb-card>    
+    <!-- <nb-card>
+        <nb-card-header>Nominee Details</nb-card-header>
+        <nb-card-body formGroupName="nominee">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Nominee Name</label>
+                    <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="nomineeName">
+                </div>
+            
+                <div class="col-md-6">
+                    <label>Relation</label>
+                    <nb-select fullWidth size="small" shape="rectangle" placeholder="Mother" formControlName="relation">
+                            <nb-option value="">Father</nb-option>
+                            <nb-option value="0">Mother</nb-option>
+                            <nb-option value="1">Son</nb-option>
+                            <nb-option value="2">Daughter</nb-option>
+                            <nb-option value="3">Brother</nb-option>
+                            <nb-option value="4">Sister</nb-option>
+                            <nb-option value="5">Wife</nb-option>
+                            <nb-option value="6">Husband</nb-option>
+                            <nb-option value="7">Nephew</nb-option>
+                            <nb-option value="8">Niece</nb-option>
+                            <nb-option value="9">Other</nb-option>
+                    </nb-select>   
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Membership Amt</label>
+                    <input nbInput type="text" fullWidth shape="rectangle" fieldSize="small" formControlName="membershipAmt">
+                </div>
+            </div>
+        </nb-card-body>
+    </nb-card> -->
+    <nb-card>
+        <div class="row">
+            <div class="col-md-12">
+                <button  nbButton outline fullWidth status="success">Register Now</button>
+            </div>
+            <div class="col-md-12">
+                <p>
+                    Form value: {{ memberShipForm.value | json }}
+                </p>
+            </div>
+        </div>
+    </nb-card>
+</form>
+
+
